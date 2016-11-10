@@ -1,0 +1,69 @@
+JavaScript notes:
+
+
+#parameters:
+to setup a parameter to default value if it is undefined
+
+```
+parameter = parameter || 'parameter default value'
+```
+
+In this the parameter will first look for given parameter if it is undefined then it will take the default value.
+
+usage example:
+```
+function  example(parameterValue){
+parameterValue = parameterValue || 'please give value'
+
+console.log(parameterValue)
+}
+
+example();
+example('xyz');
+```
+
+to check if the function has arguments console.log(arguments) for example
+
+```
+example(){
+	console.log(arguments)
+}
+```
+
+
+#Function Expression:
+
+```
+//IIFE
+If a function is wrapped in parenthesis JavaScript parser thinks it is an expression
+(function(){
+console.log('invoke me!')
+})();
+```
+usage
+```
+function createAnObject(name, language){
+if(language='es'){
+console.log(name+ ' ' +'hola') 
+} else if(language='en'){
+console.log(name+  ' ' +'hello')
+}
+}
+
+createAnObject('John Doe', (function(){
+return 'es';
+})());
+```
+
+#Callback
+When you call a function it calls another function this is called a call back(i.e i call a function and it calls another functions)
+example 
+```
+function makeCallback(callback){
+callback();
+}
+
+ makeCallback(function(){
+ console.log('i am the callback function')
+ })
+ ```
