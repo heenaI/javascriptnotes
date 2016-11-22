@@ -66,4 +66,11 @@ callback();
  makeCallback(function(){
  console.log('i am the callback function')
  })
+
+
  ```
+
+ All functions have call(), apply() and bind() method
+ bind() creates a copy of the function rather then changing the original function and add this variable. 
+ call() executes the original function and you can also pass parameters to it. foo.call(thisVariable, parameter1, parameter2)
+ apply() does the same thing but needs parameters in array foo.apply(thisVariable, [parameter1, parameter2])
