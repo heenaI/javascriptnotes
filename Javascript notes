@@ -71,6 +71,54 @@ callback();
  ```
 
  All functions have call(), apply() and bind() method
- bind() creates a copy of the function rather then changing the original function and add this variable. 
+ bind() creates a copy of the function rather then changing the original function and add this variable.  foo.bind(thisVariable)
  call() executes the original function and you can also pass parameters to it. foo.call(thisVariable, parameter1, parameter2)
  apply() does the same thing but needs parameters in array foo.apply(thisVariable, [parameter1, parameter2])
+
+ Scenarios it can be used:
+
+ function Borrowing:
+ Borrowing methods from for example object literals. e.g
+e.g
+```
+var objOne = {
+ firstName : 'captain',
+ secondName: 'crook',
+ combineName: function(lang){
+ if(lang=='en'){
+ var greet = 'Hello'+ ' ' + this.firstName + ' ' + this.secondName
+ return greet
+ 
+ } else if(lang=='de'){
+ var greet = 'Hallo'+ ' ' + this.firstName + ' ' + this.secondName
+ return greet
+ 
+ }
+ 
+ }
+ }
+ 
+ var objTwo = {
+ firstName: 'Allan',
+ secondName: 'Woodcourt'
+ }
+ 
+ 
+var result = objOne.combineName.call(objTwo, 'de')
+
+console.log(result)
+```
+Function Currying
+binding a function to some parameter that when it executes it always uses that variable 
+
+e.g 
+```
+ function add(a, b){
+ return a+b
+ }
+ 
+ var adding = add.bind(this, 2) //bind only creates a copy of the function this statement is equal to var a =2;
+ 
+ console.log(adding(5))
+ ```
+
