@@ -122,3 +122,22 @@ e.g
  console.log(adding(5))
  ```
 
+
+map object:
+
+ map object creates a copy of original array and executes a function on each element and returns an array. The difference between map and forEach is that forEach does not return any thing so this is useful where for example we need to execute some function times elements in the array.
+
+example for map
+```
+var array = [1, 2, 3, 4]
+
+var mappingArray = function(element){
+return element*2
+ 
+}
+
+
+console.log(array.map(mappingArray))
+```
+
+
